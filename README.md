@@ -2,8 +2,8 @@
 
 ## Overview
 
-[![Build Status](https://travis-ci.com/dmcanally/denver-colorprompt.svg?branch=master)](https://travis-ci.org/dmcanally/denver-colorprompt)
-[![Code Coverage](https://coveralls.io/repos/github/dmcanally/denver-colorprompt/badge.svg?branch=master)](https://coveralls.io/github/dmcanally/denver-colorprompt)
+[![Build Status](https://travis-ci.com/dmcanally/denver-colorprompt.svg?branch=master)](https://travis-ci.com/dmcanally/denver-colorprompt)
+[![Coverage Status](https://coveralls.io/repos/github/dmcanally/denver-colorprompt/badge.svg?branch=master)](https://coveralls.io/github/dmcanally/denver-colorprompt?branch=master)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
 [![Puppet Forge - scores](https://img.shields.io/puppetforge/f/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
