@@ -3,7 +3,7 @@
 # https://github.com/voxpupuli/modulesync
 # https://github.com/theforeman/foreman-installer-modulesync
 HOSTS:
-  spec-test1.spectest.indeed.net:
+  centos7.example.spec:
     platform: el-7-x86_64
     hypervisor: docker
     image: centos:7

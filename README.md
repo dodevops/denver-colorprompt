@@ -2,6 +2,13 @@
 
 ##Overview
 
+[![Build Status](https://travis-ci.com/dmcanally/denver-colorprompt.svg?branch=master)](https://travis-ci.org/dmcanally/denver-colorprompt)
+[![Code Coverage](https://coveralls.io/repos/github/dmcanally/denver-colorprompt/badge.svg?branch=master)](https://coveralls.io/github/dmcanally/denver-colorprompt)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/denver/colorprompt.svg)](https://forge.puppetlabs.com/denver/colorprompt)
+
+
 The colorprompt module. Colors your bash prompt.
 
 This is a fork of https://forge.puppet.com/sgnl05/colorprompt v2.1.2, original credit goes to the matainer(s) of sgnl05-colorprompt.

@@ -3,7 +3,7 @@
 # https://github.com/voxpupuli/modulesync
 # https://github.com/theforeman/foreman-installer-modulesync
 HOSTS:
-  spec-ubuntu1.spec.corpit.indeed.net:
+  ubuntu1804.example.spec:
     platform: ubuntu-18.04-amd64
     hypervisor: docker
     image: ubuntu:18.04
