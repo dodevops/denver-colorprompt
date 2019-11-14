@@ -1,27 +1,30 @@
----
 rvm:
-  - 2.6.3
+- 2.6.3
 env:
   matrix:
-    - PUPPET_VERSION=5.0
+  - PUPPET_VERSION=5.0
 script: bundle exec rake test
 matrix:
   fast_finish: true
   include:
-    - rvm: 2.6.3
-      env: PUPPET_VERSION=5.0
-    # Acceptance tests
-    - rvm: 2.6.3
-      dist: trusty
-      env: PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_set=docker/centos-7
-      script: bundle exec rake beaker
-      services: docker
-      bundler_args: --without development
-    - rvm: 2.6.3
-      dist: trusty
-      env: PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_set=docker/ubuntu-18.04
-      script: bundle exec rake beaker
-      services: docker
-      bundler_args: --without development
-bundler_args: --without system_tests development
+  - rvm: 2.6.3
+    env: PUPPET_VERSION=5.0
+  - rvm: 2.6.3
+    dist: trusty
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true
+      BEAKER_set=docker/centos-7
+    script: bundle exec rake beaker
+    services: docker
+    bundler_args: "--without development"
+  - rvm: 2.6.3
+    dist: trusty
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true
+      BEAKER_set=docker/ubuntu-18.04
+    script: bundle exec rake beaker
+    services: docker
+    bundler_args: "--without development"
+bundler_args: "--without system_tests development"
 sudo: false
+notifications:
+  slack:
+    secure: QXQGLsly9/ljXlYm8gKTrIas/q5pNENqjZiECK5pmFTroGtib4gXTI5HWmpKttgzHNpO5wONeJCoJuUiA3MvjOGwABl102LbJF75lp1Ec/8r62xGybOGpw0t4l0BEkm3LWrdiHnR1PZkxR9wyrWMwgqwHFPXQ9IFTqaBWLByy16w3Givam/MagN8cQJAJMt7odJHBbAT46zUGF98eKdXc2Z55Wo94veGQ7PUAAb7aKNK93beGUyupfbg2DvGODkDzFD7XvS4rmV7ewpgJ4YyluBcVUSlM+ifrP2/fu7+n39KsuKk1cTt6chXOmCwqN6rtnD5LpizdQNi1LFTeF43d3wzY/gi2mBRjog+VyTbbeMzvi0kuoJLoh3kh/dGLfQX6x8WUPXSIeAnM7q0p/9+rTEqhabRyEJQGuLQR7W91+yfGMmA9x+VKjRdmY+3oVizwbZKFjj2mFERVh+Ou85jB2ngCEolDfTKwdVecUw8RYcQbl9FV2HMCSDrpOkEmA7bmR1GfBHR0CPxU69QOKqsAtqxm5QbYI1suSOZ6S25tgi0TRZpEzVca1hCw4jtRrqVu6BYsrCPPYrnvrhaxmxBlrj+kN7yJPlDGzpgGUEqp5owZkOPcNcyI2/Y/gpqzqWoWpaXha6mRcz0DKFOEz6ddjVuv9z9wz7HcQHM4/wvytA=
