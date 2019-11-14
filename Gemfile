@@ -15,6 +15,7 @@ gem 'beaker-rspec', {"groups"=>["system_tests"]}
 gem 'beaker-module_install_helper', {"groups"=>["system_tests"]}
 gem 'beaker-puppet_install_helper', {"groups"=>["system_tests"]}
 gem 'ruby-pwsh'
+gem 'coveralls', require: false
 
 # rspec must be v2 for ruby 1.8.7
 if RUBY_VERSION >= '1.8.7' && RUBY_VERSION < '1.9'
