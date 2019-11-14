@@ -69,44 +69,32 @@
 #     },
 #  }
 #
-# === Authors
+# === Original Authors
 #
 # Gjermund Jensvoll <gjerjens@gmail.com>
+#
+# === Maintainer
+#
+# Denver Mcanally <denver.mcanally@gmail.com>
 #
 # === Copyright
 #
 # Copyright 2014-2015 Gjermund Jensvoll
 #
 class colorprompt (
-  $ensure            = $colorprompt::params::ensure,
-  $path              = $colorprompt::params::path,
-  $default_usercolor = $colorprompt::params::default_usercolor,
-  $custom_usercolors = $colorprompt::params::custom_usercolors,
-  $server_color      = $colorprompt::params::server_color,
-  $env_name          = $colorprompt::params::env_name,
-  $env_color         = $colorprompt::params::env_color,
-  $prompt            = $colorprompt::params::prompt,
-  $modify_skel       = $colorprompt::params::modify_skel,
-  $modify_root       = $colorprompt::params::modify_root,
-) inherits colorprompt::params {
+  Enum[present,absent] $ensure   = present,
+  Stdlib::Absolutepath $path     = '/etc/profile.d/colorprompt.sh',
+  String $default_usercolor      = 'cyan',
+  Hash $custom_usercolors        = { 'root' => 'magenta' },
+  Optional[String] $server_color = undef,
+  Optional[String] $env_name     = undef,
+  Optional[String] $env_color    = undef,
+  String $prompt                 = $::colorprompt::params::prompt,
+  Boolean $modify_skel           = false,
+  Boolean $modify_root           = false,
+) inherits ::colorprompt::params {
 
-  validate_re($ensure, '^(present|absent)$',
-    "${ensure} is not supported for ensure. Allowed values are 'present' and 'absent'.")
-
-  validate_absolute_path(
-    $path,
-  )
-
-  validate_string(
-    $prompt
-  )
-
-  validate_bool(
-    $modify_skel,
-    $modify_root
-  )
-
-  file { 'colorprompt.sh':
+  file { $path:
     ensure  => $ensure,
     path    => $path,
     owner   => 'root',
@@ -120,7 +108,7 @@ class colorprompt (
       command     => 'sed -i \'/^if \[ "\$color_prompt" = yes \]; then/,/fi/s/^/#/\' /etc/skel/.bashrc',
       path        => '/bin:/usr/bin:/sbin:/usr/sbin',
       refreshonly => true,
-      subscribe   => File['colorprompt.sh'],
+      subscribe   => File[$path],
     }
   }
 
@@ -129,7 +117,7 @@ class colorprompt (
       command     => 'sed -i \'/^if \[ "\$color_prompt" = yes \]; then/,/fi/s/^/#/\' /root/.bashrc',
       path        => '/bin:/usr/bin:/sbin:/usr/sbin',
       refreshonly => true,
-      subscribe   => File['colorprompt.sh'],
+      subscribe   => File[$path],
     }
   }
 

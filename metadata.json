@@ -1,12 +1,12 @@
 {
-  "name": "sgnl05-colorprompt",
-  "version": "2.1.2",
-  "author": "sgnl05",
+  "name": "denver-colorprompt",
+  "version": "2.1.3",
+  "author": "dmcanally",
   "summary": "Add colors to your bash prompt",
   "license": "Apache-2.0",
-  "source": "git://github.com/sgnl05/sgnl05-colorprompt.git",
-  "project_page": "https://github.com/sgnl05/sgnl05-colorprompt",
-  "issues_url": "https://github.com/sgnl05/sgnl05-colorprompt/issues",
+  "source": "git://github.com/dmcanally/denver-colorprompt.git",
+  "project_page": "https://github.com/dmcanally/denver-colorprompt",
+  "issues_url": "https://github.com/dmcanally/denver-colorprompt/issues",
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat"
@@ -29,11 +29,11 @@
   ],
   "requirements": [
     {
-      "version_requirement": ">=3.0.0 < 5.0.0",
+      "version_requirement": ">=3.0.0 < 7.0.0",
       "name": "puppet"
     }
   ],
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 3.0.0 < 5.0.0"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 3.0.0 < 7.0.0"}
   ]
 }

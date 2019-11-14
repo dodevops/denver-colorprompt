@@ -4,6 +4,8 @@
 
 The colorprompt module. Colors your bash prompt.
 
+This is a fork of https://forge.puppet.com/sgnl05/colorprompt v2.1.2, original credit goes to the matainer(s) of sgnl05-colorprompt.
+
 ##Module Description
 The colorprompt module creates /etc/profile.d/colorprompt.sh, which sets a colored prompt. Different colors can be set for (all and specific) users, server name and environment tag.
 
@@ -30,10 +32,6 @@ class { 'colorprompt':
    },
 }
 ```
-
-###What does the example above look like?
-
-![prompt](https://raw.githubusercontent.com/sgnl05/sgnl05-colorprompt/master/example.png)
 
 ###Great! What colors are available?
 
@@ -116,7 +114,12 @@ The module has been tested on:
 Ubuntu and Debian need modification to existing user ~/.bashrc files (comment out PS1 variables).
 
 ## Development
-
+To execute acceptance tests...
+```bash
+PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_set=docker/centos-7 bundle exec rake beaker
+PUPPET_INSTALL_TYPE=agent BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_set=docker/ubuntu-18.04 bundle exec rake beaker
+```
+For this to work you must have docker installed and running locally
 ###Contributing
 
-Please use the issue tracker (https://github.com/sgnl05/sgnl05-colorprompt/issues) for any type of contribution. 
+Please use the issue tracker (https://github.com/dmcanally/denver-colorprompt/issues) for any type of contribution. 
