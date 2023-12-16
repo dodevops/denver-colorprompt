@@ -1,7 +1,7 @@
 # Default parameters
 class colorprompt::params {
 
-  case $::osfamily {
+  case $facts['os']['family'] {
 
     'RedHat': {
       $prompt      = '${env}[${userColor}\u\[\e[0m\]@${serverColor}\h\[\e[0m\] \W]\\$ '
@@ -12,7 +12,7 @@ class colorprompt::params {
     }
 
     default: {
-      fail("Unsupported osfamily: ${::osfamily}")
+      fail("Unsupported osfamily: ${facts['os']['family']}")
     }
 
   }
